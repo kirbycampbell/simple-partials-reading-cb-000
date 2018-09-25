@@ -801,3 +801,43 @@ Started GET "/posts" for 97.120.201.67 at 2018-09-25 00:10:45 +0000
 Processing by PostsController#index as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
   Rendered posts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 421ms (Views: 414.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 97.120.201.67 at 2018-09-25 00:10:46 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 97.120.201.67 at 2018-09-25 00:10:46 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 97.120.201.67 at 2018-09-25 00:10:46 +0000
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 97.120.201.67 at 2018-09-25 00:10:46 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 97.120.201.67 at 2018-09-25 00:10:46 +0000
+
+
+Started GET "/posts/new" for 97.120.201.67 at 2018-09-25 00:10:50 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (1.1ms)
+  Rendered posts/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 97.120.201.67 at 2018-09-25 00:10:57 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5o0ou8CfJByaq/V/G7luv2NHhiaZLPmFOO0ECGRioY/aof/coZFKEFaqfE0aBEszrtzPVIWRkMx7yRS/lct4KA==", "title"=>"Stupid Shit", "description"=>"Hello squirrels", "commit"=>"Submit Post"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY "authors"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Stupid Shit"], ["description", "Hello squirrels"], ["author_id", 1], ["created_at", "2018-09-25 00:10:57.773996"], ["updated_at", "2018-09-25 00:10:57.773996"]]
+  [1m[35m (5.3ms)[0m  commit transaction
+Redirected to http://165.227.16.205:34799/posts/11
+Completed 302 Found in 41ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/posts/11" for 97.120.201.67 at 2018-09-25 00:10:57 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
